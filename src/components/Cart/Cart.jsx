@@ -1,14 +1,25 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import ItemDeets from "../ItemDeets/ItemDeets";
 import "./cart.css";
 
 const Cart = ({ setQuantity, cart, quantity }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleVisibility = () => {
+    setIsVisible(!isVisible);
+  };
+
   return (
     <div className="cart-container">
-      <button type="button">CartIcon</button>
-      {cart.length !== 0 && (
-        <ItemDeets cart={cart} quantity={quantity} setQuantity={setQuantity} />
-      )}
+      <button type="button" onClick={handleVisibility}>
+        CartIcon
+      </button>
+      <ItemDeets
+        cart={cart}
+        quantity={quantity}
+        setQuantity={setQuantity}
+        isVisible={isVisible}
+      />
     </div>
   );
 };

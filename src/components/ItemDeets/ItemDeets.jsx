@@ -1,6 +1,13 @@
 import React from "react";
+import "./itemdeets.css";
 
-const ItemDeets = ({ cart, quantity, setQuantity }) => {
+const ItemDeets = ({ cart, quantity, setQuantity, isVisible }) => {
+  let visibility = "hidden";
+
+  if (isVisible) {
+    visibility = "visible";
+  }
+
   const handleRemove = (e) => {
     const index = e.target.value;
     cart.splice(index, 1);
@@ -9,7 +16,7 @@ const ItemDeets = ({ cart, quantity, setQuantity }) => {
   };
   //* this should not be quantity but how many times it is in the array cart
   return (
-    <>
+    <div className={visibility} id="modal-cart">
       {cart.map((item, index) => {
         console.log("items at map from cart", item);
         return (
@@ -29,7 +36,7 @@ const ItemDeets = ({ cart, quantity, setQuantity }) => {
           </div>
         );
       })}
-    </>
+    </div>
   );
 };
 

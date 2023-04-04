@@ -1,0 +1,20 @@
+#modal-cart {
+  width: 30vw;
+  height: 30vh;
+  background-color: #efefe6;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s cubic-bezier(1, 0, 0, 1);
+  overflow: scroll;
+  z-index: 1000;
+}
+
+#modal-cart.hidden {
+    transform: translate3d(80vw, -100vh, 0);
+}
+
+#modal-cart.visible {
+    transform: translate3d(130vh, 5vw, 0);
+    overflow: hidden;
+}

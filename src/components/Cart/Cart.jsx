@@ -11,9 +11,13 @@ const Cart = ({ setQuantity, cart, quantity }) => {
 
   return (
     <div className="cart-container">
-      <button type="button" onClick={handleVisibility}>
-        CartIcon
-      </button>
+      <h2 className="cart-bubble">{cart.length}</h2>
+      <img
+        className="cart-icon"
+        src="../../../images/icon-cart.svg"
+        onClick={handleVisibility}
+        alt="icon-cart"
+      />
       <ItemDeets
         cart={cart}
         quantity={quantity}

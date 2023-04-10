@@ -5,16 +5,16 @@ import Viewer from "../Viewer/Viewer";
 
 const catalogue = {
   sneakers: {
-    name: "Super sneakers legacy great ones",
+    name: "Fall Limited Edition Sneakers",
     description:
-      "Come and try them they are actually super duper good quality and worth the price",
+      "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.",
     images: [
       "../../../images/image-product-1.jpg",
       "../../../images/image-product-2.jpg",
       "../../../images/image-product-3.jpg",
       "../../../images/image-product-4.jpg",
     ],
-    price: 3000,
+    price: "250.00",
     discounted: true,
   },
 };
@@ -30,7 +30,6 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <h1>Hello</h1>
       <Header cart={cart} quantity={quantity} setQuantity={setQuantity} />
       <Viewer
         selectedItem={selectedItem}

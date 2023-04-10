@@ -7,7 +7,7 @@ import Profile from "../Profile/Profile";
 const Header = ({ setQuantity, cart, quantity }) => {
   return (
     <div className="header-container">
-      <img src="" alt="logo" />
+      <img className="logo" src="../../../images/logo.svg" alt="logo" />
       <Nav />
       <Cart cart={cart} quantity={quantity} setQuantity={setQuantity} />
       <Profile />

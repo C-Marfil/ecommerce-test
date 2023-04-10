@@ -1,0 +1,22 @@
+.product-images--container {
+  margin-top: 30px;
+}
+
+.thumbnails {
+  width: 70px;
+  height: 70px;
+  margin-right: 22px;
+  margin-top: 10px;
+  border-radius: 10%;
+}
+
+.mini-images--container {
+  display: flex;
+  justify-content: center;
+}
+
+.main-image {
+  width: 350px;
+  length: 350px;
+  border-radius: 5%;
+}

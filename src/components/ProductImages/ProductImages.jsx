@@ -7,6 +7,12 @@ const ProductImages = ({ selectedItem }) => {
   const [selectedImage, setSelectedImage] = useState(selectedItem.images[0]);
   const { images } = selectedItem;
 
+  const handleThumbnail = (e) => {
+    const currentThumbnail = e.target.name;
+    const thumbnailIndex = images.indexOf(currentThumbnail);
+    setSelectedImage(selectedItem.images[thumbnailIndex]);
+  };
+
   return (
     <div className="product-images--container">
       <img className="main-image" src={selectedImage} alt="" />
@@ -15,9 +21,10 @@ const ProductImages = ({ selectedItem }) => {
           return (
             <img
               src={image}
+              className="thumbnails"
               alt={selectedItem.name}
-              value={image}
-              onClick={(e) => setSelectedImage(e.target.value)}
+              name={image}
+              onClick={(e) => handleThumbnail(e)}
             />
           );
         })}

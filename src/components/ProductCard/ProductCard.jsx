@@ -16,27 +16,43 @@ const ProductCard = ({
 
   return (
     <div className="product-card-container">
-      <h3>Sneaker Company</h3>
+      <h3 className="orange-text">SNEAKER COMPANY</h3>
       <h1>{selectedItem.name}</h1>
-      <p>{selectedItem.description}</p>
-      <h1>
-        {selectedItem.discounted ? selectedItem.price / 2 : selectedItem.price}
-      </h1>
-      {selectedItem.discounted && (
-        <>
-          <h1 className="discount-badge">50%</h1>{" "}
-          <p className="full-price-discounted">{selectedItem.price}</p>
-        </>
-      )}
+      <p className="paragraph">{selectedItem.description}</p>
+      <span className="price-discount--container">
+        <h1 className="actual-price">
+          {`$${
+            selectedItem.discounted
+              ? `${selectedItem.price / 2.0}.00`
+              : selectedItem.price
+          }`}
+        </h1>
+        {selectedItem.discounted && (
+          <>
+            <h1 className="orange-text" id="discount-badge">
+              50%
+            </h1>
+            <p className="crossed-price">{`$${selectedItem.price}`}</p>
+          </>
+        )}
+      </span>
       <span className="product-card--buttons">
-        <button type="button" onClick={() => setQuantity(quantity + 1)}>
-          +
-        </button>
-        <p>{quantity}</p>
-        <button type="button" onClick={() => setQuantity(quantity - 1)}>
+        <button
+          type="button"
+          className="minus"
+          onClick={() => setQuantity(quantity - 1)}
+        >
           -
         </button>
-        <button type="button" onClick={handleAdd}>
+        <p className="quantity">{quantity}</p>
+        <button
+          type="button"
+          className="plus"
+          onClick={() => setQuantity(quantity + 1)}
+        >
+          +
+        </button>
+        <button className="add-button" type="button" onClick={handleAdd}>
           Add To Cart
         </button>
       </span>

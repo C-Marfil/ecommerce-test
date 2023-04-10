@@ -1,0 +1,13 @@
+.header-container {
+    display: flex;
+    flex-wrap: nowrap;
+    position:relative;
+    flex-direction: row;
+}
+
+.logo {
+    height: 20px;
+    margin-top: 33px;
+    margin-left: 140px;
+    border-bottom: 5px;
+}

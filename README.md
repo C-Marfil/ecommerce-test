@@ -10,6 +10,7 @@ This is a solution to the [E-commerce product page challenge on Frontend Mentor]
   - [Continued development](#continued-development)
 
 ### The challenge
+![challenge to beat](design/desktop-design.jpg)
 
 Users should be able to:
 
@@ -17,7 +18,7 @@ Users should be able to:
 - Add items to the cart
 - View the cart and remove items from it
 
-### Screenshot
+### Screenshot of Result
 
 ![final result](public/images/endofday.png)
 

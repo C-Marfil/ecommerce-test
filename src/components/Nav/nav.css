@@ -7,9 +7,14 @@
 
 .nav-container > button {
     border: none;
+    cursor: pointer;
     background: transparent;
     margin-top: 23px;
     margin-bottom: 5px;
     margin-left: 23px;
     color: hsl(219, 9%, 45%);
+}
+
+.nav-container > button:hover {
+        border-bottom: solid 4px orange;
 }

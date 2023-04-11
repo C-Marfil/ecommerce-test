@@ -15,6 +15,7 @@ margin-left: 20px;
 
 .name {
 font-size: 12px;
+font-weight: lighter;
 color:hsl(222, 6%, 60%);
 }
 
@@ -41,6 +42,16 @@ color:hsl(222, 6%, 60%);
   margin-left: 10px;
   width: 15px;
   height: 15px;
+}
+
+.price {
+  margin-left: 5px;
+  color:hsl(222, 6%, 60%);
+}
+
+.total {
+  margin-left: 10px;
+  font-weight: bold;
 }
 
 .cart-details {

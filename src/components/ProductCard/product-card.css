@@ -7,12 +7,13 @@
 .orange-text {
   color: hsl(26, 100%, 55%);
   font-size: smaller;
+  font-weight: bold;
 }
 
 .paragraph {
   color:hsl(219, 9%, 45%);
   line-height: 20px;
-font-size: small;
+  font-size: small;
 }
 
 #discount-badge {
@@ -71,16 +72,22 @@ font-size: small;
   color: hsl(26, 100%, 55%);
   font-size: large;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .add-button {
     color: white;
-    border:none;
-    border-radius: 10%;
+    border: solid hsl(26, 100%, 55%) 3px;
+    border-radius: 10px / 5px;
     background-color:  hsl(26, 100%, 55%);
     margin-top: 13px;
     margin-left: 10px;
     height: 7vh;
     width: 15vw;
+    cursor: pointer;
+}
+
+.add-button:hover {
+  filter: opacity(80%);
 }
 

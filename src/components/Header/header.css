@@ -3,11 +3,11 @@
     flex-wrap: nowrap;
     position:relative;
     flex-direction: row;
+    border-bottom: solid rgb(235, 231, 231) 2px;
 }
 
 .logo {
     height: 20px;
     margin-top: 33px;
     margin-left: 140px;
-    border-bottom: 5px;
 }

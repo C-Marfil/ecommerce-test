@@ -1,13 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./product-card.css";
 
-const ProductCard = ({
-  cart,
-  selectedItem,
-  quantity,
-  setQuantity,
-  setCart,
-}) => {
+const ProductCard = ({ selectedItem, quantity, setQuantity, setCart }) => {
   const handleAdd = () => {
     for (let i = 1; i <= quantity; i += 1) {
       setCart((prev) => [...prev, selectedItem]);
@@ -58,6 +53,19 @@ const ProductCard = ({
       </span>
     </div>
   );
+};
+
+ProductCard.propTypes = {
+  selectedItem: PropTypes.shape({
+    images: PropTypes.string.isRequired,
+    discounted: PropTypes.bool.isRequired,
+    description: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+  }).isRequired,
+  quantity: PropTypes.string.isRequired,
+  setQuantity: PropTypes.func.isRequired,
+  setCart: PropTypes.func.isRequired,
 };
 
 export default ProductCard;

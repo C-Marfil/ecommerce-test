@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./header.css";
 import Cart from "../Cart/Cart";
 import Nav from "../Nav/Nav";
@@ -13,6 +14,14 @@ const Header = ({ setQuantity, cart, quantity }) => {
       <Profile />
     </div>
   );
+};
+
+Header.propTypes = {
+  cart: PropTypes.arrayOf(
+    PropTypes.shape({ name: PropTypes.string.isRequired }).isRequired
+  ).isRequired,
+  quantity: PropTypes.string.isRequired,
+  setQuantity: PropTypes.func.isRequired,
 };
 
 export default Header;

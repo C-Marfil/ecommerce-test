@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from "react";
+import PropTypes from "prop-types";
 import "./itemdeets.css";
 
 const ItemDeets = ({ cart, quantity, setQuantity, isVisible }) => {
@@ -22,6 +23,10 @@ const ItemDeets = ({ cart, quantity, setQuantity, isVisible }) => {
       <h1 className="header">Cart</h1>
       {cart.map((item, index) => {
         console.log("items at map from cart", item);
+        const discountedPrice = item.discounted ? item.price / 2 : item.price;
+        const totalAmount = item.discounted
+          ? discountedPrice * quantity
+          : item.price * quantity;
         return (
           <div className="item-details">
             <span className="container">
@@ -29,10 +34,8 @@ const ItemDeets = ({ cart, quantity, setQuantity, isVisible }) => {
               <div className="cart-details">
                 <h1 className="name">{item.name}</h1>
                 <div className="numbers">
-                  <p className="price">{`${item.price} X ${quantity}`}</p>
-                  <p className="total">
-                    {item.price}*{quantity}
-                  </p>
+                  <p className="price">{`$${discountedPrice}.00 x ${quantity}`}</p>
+                  <p className="total">{`$${totalAmount}.00`}</p>
                 </div>
               </div>
               <img
@@ -51,6 +54,16 @@ const ItemDeets = ({ cart, quantity, setQuantity, isVisible }) => {
       </button>
     </div>
   );
+};
+
+ItemDeets.propTypes = {
+  cart: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
+  selectedItem: PropTypes.shape({
+    images: PropTypes.string.isRequired,
+  }).isRequired,
+  quantity: PropTypes.string.isRequired,
+  setQuantity: PropTypes.func.isRequired,
+  isVisible: PropTypes.bool.isRequired,
 };
 
 export default ItemDeets;

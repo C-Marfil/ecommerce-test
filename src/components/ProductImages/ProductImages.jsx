@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import "./product-images.css";
 
 const ProductImages = ({ selectedItem }) => {
@@ -31,6 +32,13 @@ const ProductImages = ({ selectedItem }) => {
       </div>
     </div>
   );
+};
+
+ProductImages.propTypes = {
+  selectedItem: PropTypes.shape({
+    images: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default ProductImages;
